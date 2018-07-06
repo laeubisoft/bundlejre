@@ -51,6 +51,6 @@
 	MODULES
   -->
   <modules>
-    <module>net.openchrom.bundlejre</module>
+    <module>net.openchrom.jre.updatesite</module>
   </modules>
 </project>
