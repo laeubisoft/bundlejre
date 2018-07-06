@@ -59,9 +59,9 @@ pipeline {
 		         to: emailextrecipients([[$class: 'CulpritsRecipientProvider'],
 		                                 [$class: 'RequesterRecipientProvider']]))
         }
-        //success {
-            //cleanWs notFailBuild: true
-        //}
+        success {
+            cleanWs notFailBuild: true
+        }
 
     }
 }
