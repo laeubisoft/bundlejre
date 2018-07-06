@@ -25,13 +25,13 @@ pipeline {
 					sh 'wget -nv -N https://chriswhocodes.com/downloads/openjfx-8-sdk-overlay-win-x64.zip'
 					sh 'unzip -o openjfx-8-sdk-overlay-win-x64.zip -d openchrom/features/net.openchrom.jre.win32.win32.x86_64.feature/jre/zulu8.30.0.1-jdk8.0.172-win_x64/'
 					//linux x86_64
-					sh 'wget -nv https://cdn.azul.com/zulu/bin/zulu8.30.0.1-jdk8.0.172-linux_x64.tar.gz'
+					sh 'wget -nv -N https://cdn.azul.com/zulu/bin/zulu8.30.0.1-jdk8.0.172-linux_x64.tar.gz'
 					sh 'tar -xvzf zulu8.30.0.1-jdk8.0.172-linux_x64.tar.gz -C openchrom/features/net.openchrom.jre.linux.gtk.x86_64.feature/jre'
-					sh 'wget -nv https://chriswhocodes.com/downloads/openjfx-8u60-sdk-overlay-linux-amd64.zip'
+					sh 'wget -nv -N https://chriswhocodes.com/downloads/openjfx-8u60-sdk-overlay-linux-amd64.zip'
 					sh 'unzip -o openjfx-8u60-sdk-overlay-linux-amd64.zip -d openchrom/features/net.openchrom.jre.linux.gtk.x86_64.feature/jre/zulu8.30.0.1-jdk8.0.172-linux_x64'
-					//mac osx
-					sh 'wget -nv https://cdn.azul.com/zulu/bin/zulu8.30.0.1-jdk8.0.172-macosx_x64.tar.gz'
-					sh 'tar -xvzf zulu8.30.0.1-jdk8.0.172-macosx_x64.tar.gz -C openchrom/features/net.openchrom.jre.macosx.cocoa.x86_64.feature/jre'
+					//mac osx x86_64
+					sh 'wget -nv -N https://cdn.azul.com/zulu/bin/zulu8.30.0.1-jdk8.0.172-macosx_x64.tar.gz'
+					sh 'tar -xvzf -N zulu8.30.0.1-jdk8.0.172-macosx_x64.tar.gz -C openchrom/features/net.openchrom.jre.macosx.cocoa.x86_64.feature/jre'
 					sh' wget -nv https://chriswhocodes.com/downloads/openjfx-8u60-sdk-overlay-osx-x64.zip'
 					sh 'unzip -o openjfx-8u60-sdk-overlay-osx-x64.zip -d openchrom/features/net.openchrom.jre.macosx.cocoa.x86_64.feature/jre/zulu8.30.0.1-jdk8.0.172-macosx_x64'
 				}
