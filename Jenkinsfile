@@ -21,12 +21,9 @@ pipeline {
 					sh 'tar -xvzf jre-8u102-windows-i586.tar.gz -C openchrom/features/net.openchrom.jre.win32.win32.x86.feature/jre'
 					//windows 64
 					sh 'wget -nv -N https://cdn.azul.com/zulu/bin/zulu8.30.0.1-jdk8.0.172-win_x64.zip'
-					sh 'unzip -o openchrom/features/net.openchrom.jre.win32.win32.x86_64.feature/jre'
+					sh 'unzip -o zulu8.30.0.1-jdk8.0.172-win_x64.zip -d openchrom/features/net.openchrom.jre.win32.win32.x86_64.feature/jre'
 					sh 'wget -nv -N https://chriswhocodes.com/downloads/openjfx-8-sdk-overlay-win-x64.zip'
-					
-					//linux x86
-					sh 'wget -nv https://cdn.azul.com/zulu/bin/zulu8.30.0.1-jdk8.0.172-linux_i686.tar.gz'
-					sh 'tar -xvzf zulu8.30.0.1-jdk8.0.172-linux_i686.tar.gz -C openchrom/features/net.openchrom.jre.linux.gtk.x86.feature/jre'
+					sh 'unzip -o openjfx-8-sdk-overlay-win-x64.zip -d openchrom/features/net.openchrom.jre.win32.win32.x86_64.feature/jre/zulu8.30.0.1-jdk8.0.172-win_x64/'
 					//linux x86_64
 					sh 'wget -nv https://cdn.azul.com/zulu/bin/zulu8.30.0.1-jdk8.0.172-linux_x64.tar.gz'
 					sh 'tar -xvzf zulu8.30.0.1-jdk8.0.172-linux_x64.tar.gz -C openchrom/features/net.openchrom.jre.linux.gtk.x86_64.feature/jre'
