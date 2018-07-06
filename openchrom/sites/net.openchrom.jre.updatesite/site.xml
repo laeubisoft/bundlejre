@@ -3,8 +3,6 @@
    <description name="OpenChrom Platform">
       
    </description>
-   <feature url="features/net.openchrom.platform.feature_1.0.0.qualifier.jar" id="net.openchrom.platform.feature" version="1.0.0.qualifier">
-      <category name="net.openchrom.jre"/>
-   </feature>
+   <feature url="features/net.openchrom.jre.feature_1.0.0.jar" id="net.openchrom.jre.feature" version="1.0.0"/>
    <category-def name="net.openchrom.jre" label="OpenChrom Bundeled JRE"/>
 </site>
