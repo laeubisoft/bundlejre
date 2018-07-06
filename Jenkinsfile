@@ -5,7 +5,7 @@ pipeline {
         maven 'MAVEN3'
     }
     triggers {
-        pollSCM('H/5 * * * *')
+        pollSCM('@daily')
     }
     options {
         disableConcurrentBuilds()
