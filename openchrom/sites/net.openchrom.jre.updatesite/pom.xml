@@ -8,7 +8,7 @@
 		<version>1.0.0-SNAPSHOT</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
-	<artifactId>net.openchrom.jre.updatesite</artifactId>
+	<artifactId>net.openchrom.bundlejre.sites</artifactId>
 	<packaging>eclipse-update-site</packaging>
 
 </project>
