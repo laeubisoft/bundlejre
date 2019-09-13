@@ -16,18 +16,16 @@ pipeline {
     	steps {
     			dir('bundlejre') {
 					checkout scm
-					//windows 32
-					sh 'wget -nv -N https://github.com/OpenChrom/openchromcomp/raw/develop/openchrom/packaging/net.openchrom.rcp.compilation.community.packaging/build/jre/jre-8u102-windows-i586.tar.gz'
-					sh 'tar -xvzf jre-8u102-windows-i586.tar.gz -C openchrom/features/net.openchrom.jre.win32.win32.x86.feature/jre'
 					//windows 64
-					sh 'wget -nv -N https://cdn.azul.com/zulu/bin/zulu8.33.0.1-ca-fx-jdk8.0.192-win_x64.zip'
-					sh 'unzip -o zulu8.33.0.1-ca-fx-jdk8.0.192-win_x64.zip -d openchrom/features/net.openchrom.jre.win32.win32.x86_64.feature/jre'
+					                
+					sh 'wget -nv -N https://cdn.azul.com/zulu/bin/zulu8.40.0.25-ca-fx-jre8.0.222-win_x64.zip'
+					sh 'unzip -o zulu8.40.0.25-ca-fx-jre8.0.222-win_x64.zip -d openchrom/features/net.openchrom.jre.win32.win32.x86_64.feature/jre'
 					//linux x86_64
-					sh 'wget -nv -N https://cdn.azul.com/zulu/bin/zulu8.33.0.1-ca-fx-jdk8.0.192-linux_x64.tar.gz'
-					sh 'tar -xvzf zulu8.33.0.1-ca-fx-jdk8.0.192-linux_x64.tar.gz -C openchrom/features/net.openchrom.jre.linux.gtk.x86_64.feature/jre'
+					sh 'wget -nv -N https://cdn.azul.com/zulu/bin/zulu8.40.0.25-ca-fx-jre8.0.222-linux_x64.tar.gz'
+					sh 'tar -xvzf zulu8.40.0.25-ca-fx-jre8.0.222-linux_x64.tar.gz -C openchrom/features/net.openchrom.jre.linux.gtk.x86_64.feature/jre'
 					//mac osx x86_64
-					sh 'wget -nv -N https://cdn.azul.com/zulu/bin/zulu8.33.0.1-ca-fx-jdk8.0.192-macosx_x64.tar.gz'
-					sh 'tar -xvzf zulu8.33.0.1-ca-fx-jdk8.0.192-macosx_x64.tar.gz -C openchrom/features/net.openchrom.jre.macosx.cocoa.x86_64.feature/jre'
+					sh 'wget -nv -N https://cdn.azul.com/zulu/bin/zulu8.40.0.25-ca-fx-jre8.0.222-macosx_x64.tar.gz'
+					sh 'tar -xvzf zulu8.40.0.25-ca-fx-jre8.0.222-macosx_x64.tar.gz -C openchrom/features/net.openchrom.jre.macosx.cocoa.x86_64.feature/jre'
 				}
 			}
     	}
