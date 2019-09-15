@@ -17,14 +17,15 @@ pipeline {
     			dir('bundlejre') {
 					checkout scm
 					//windows 64
-					sh 'wget -nv -N https://cdn.azul.com/zulu/bin/zulu8.38.0.13-ca-fx-jre8.0.212-win_x64.zip'
-					sh 'unzip -o zulu8.38.0.13-ca-fx-jre8.0.212-win_x64.zip -d openchrom/features/net.openchrom.jre.win32.win32.x86_64.feature/jre'
+					                
+					sh 'wget -nv -N https://cdn.azul.com/zulu/bin/zulu8.40.0.25-ca-fx-jre8.0.222-win_x64.zip'
+					sh 'unzip -o zulu8.40.0.25-ca-fx-jre8.0.222-win_x64.zip -d openchrom/features/net.openchrom.jre.win32.win32.x86_64.feature/jre'
 					//linux x86_64
-					sh 'wget -nv -N https://cdn.azul.com/zulu/bin/zulu8.38.0.13-ca-fx-jre8.0.212-linux_x64.tar.gz'
-					sh 'tar -xvzf zulu8.38.0.13-ca-fx-jre8.0.212-linux_x64.tar.gz -C openchrom/features/net.openchrom.jre.linux.gtk.x86_64.feature/jre'
+					sh 'wget -nv -N https://cdn.azul.com/zulu/bin/zulu8.40.0.25-ca-fx-jre8.0.222-linux_x64.tar.gz'
+					sh 'tar -xvzf zulu8.40.0.25-ca-fx-jre8.0.222-linux_x64.tar.gz -C openchrom/features/net.openchrom.jre.linux.gtk.x86_64.feature/jre'
 					//mac osx x86_64
-					sh 'wget -nv -N https://cdn.azul.com/zulu/bin/zulu8.38.0.13-ca-fx-jre8.0.212-macosx_x64.tar.gz'
-					sh 'tar -xvzf zulu8.38.0.13-ca-fx-jre8.0.212-macosx_x64.tar.gz -C openchrom/features/net.openchrom.jre.macosx.cocoa.x86_64.feature/jre'
+					sh 'wget -nv -N https://cdn.azul.com/zulu/bin/zulu8.40.0.25-ca-fx-jre8.0.222-macosx_x64.tar.gz'
+					sh 'tar -xvzf zulu8.40.0.25-ca-fx-jre8.0.222-macosx_x64.tar.gz -C openchrom/features/net.openchrom.jre.macosx.cocoa.x86_64.feature/jre'
 				}
 			}
     	}
