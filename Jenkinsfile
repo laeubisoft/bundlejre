@@ -1,3 +1,6 @@
+def WIN='zulu11.39.15-ca-fx-jre11.0.7-win_x64.zip'
+def LNX='zulu11.39.15-ca-fx-jre11.0.7-linux_x64.tar.gz'
+def MAC='zulu11.39.15-ca-fx-jre11.0.7-macosx_x64.tar.gz'
 pipeline {
     agent any
     tools { 
@@ -17,14 +20,14 @@ pipeline {
     			dir('bundlejre') {
 					checkout scm
 					//windows 64
-					sh 'wget -nv -N https://cdn.azul.com/zulu/bin/zulu11.39.15-ca-fx-jre11.0.7-win_x64.zip'
-					sh 'unzip -o zulu8.33.0.1-ca-fx-jdk8.0.192-win_x64.zip -d openchrom/features/net.openchrom.jre.win32.win32.x86_64.feature/jre'
+					sh "wget -nv -N https://cdn.azul.com/zulu/bin/${WIN}"
+					sh "unzip -o ${WIN} -d openchrom/features/net.openchrom.jre.win32.win32.x86_64.feature/jre"
 					//linux x86_64
-					sh 'wget -nv -N https://cdn.azul.com/zulu/bin/zulu11.39.15-ca-fx-jre11.0.7-linux_x64.tar.gz'
-					sh 'tar -xvzf zulu8.33.0.1-ca-fx-jdk8.0.192-linux_x64.tar.gz -C openchrom/features/net.openchrom.jre.linux.gtk.x86_64.feature/jre'
+					sh "wget -nv -N https://cdn.azul.com/zulu/bin/${LNX}"
+					sh "tar -xvzf ${LNX} -C openchrom/features/net.openchrom.jre.linux.gtk.x86_64.feature/jre"
 					//mac osx x86_64
-					sh 'wget -nv -N https://cdn.azul.com/zulu/bin/zulu11.39.15-ca-fx-jre11.0.7-macosx_x64.tar.gz'
-					sh 'tar -xvzf zulu8.33.0.1-ca-fx-jdk8.0.192-macosx_x64.tar.gz -C openchrom/features/net.openchrom.jre.macosx.cocoa.x86_64.feature/jre'
+					sh "wget -nv -N https://cdn.azul.com/zulu/bin/${MAC}"
+					sh "tar -xvzf ${MAC} -C openchrom/features/net.openchrom.jre.macosx.cocoa.x86_64.feature/jre"
 				}
 			}
     	}
@@ -35,10 +38,9 @@ pipeline {
 			}
 		}
 		stage('deploy') {
-			when { branch 'develop' }
 			steps {
 				withCredentials([string(credentialsId: 'JRE_DEPLOY_HOST', variable: 'JRE_DEPLOY_HOST'), string(credentialsId: 'JRE_DEPLOY_PATH', variable: 'JRE_DEPLOY_PATH')]) {
-					sh 'scp -r bundlejre/openchrom/sites/net.openchrom.jre.updatesite/target/site/* '+"${JRE_DEPLOY_HOST}${JRE_DEPLOY_PATH}${BRANCH_NAME}"
+					sh 'scp -r bundlejre/openchrom/sites/net.openchrom.jre.updatesite/target/site/* '+"${JRE_DEPLOY_HOST}:${JRE_DEPLOY_PATH}${BRANCH_NAME}"
 				}
 			}
 		}
